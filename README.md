@@ -3,7 +3,7 @@
 Adlai Nelson, Isack Walube, Rory Dickinson
 
 ### Introduction
-
+In an era characterized by rapid urban development, the effectiveness of public transportation networks is vital for the welfare of urban dwellers. This project evaluates the efficiency of public transit systems in Boston, focusing on metrics such as coverage, frequency, and connectivity across various block groups. By conducting a comprehensive analysis, we aim to derive actionable insights that can refine transit systems, ultimately enhancing accessibility and sustainability in public transportation.
 
 
 ### Data
