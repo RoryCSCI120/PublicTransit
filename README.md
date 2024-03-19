@@ -8,10 +8,11 @@ In an era characterized by rapid urban development, the effectiveness of public 
 
 ### Data
 
-Transportation data, including bus and subway stops, as well as wich route was associated with the stops, were downloaded from MassGIS. Reliability data were downloaded from MBTAs open data portal. 
+Transportation data, including bus and subway stops, as well as wich route was associated with the stops, were downloaded from MassGIS. Reliability data for 2015 - March 2024 were downloaded from MBTAs open data portal. 
 
 Demographics data, US Census tracts containing data regarding median household income, as well as median household income based on race, self vs nonself employment. Data collected by the American Community Survey, downloaded from ESRI's Covid-19 Resources page.
 
 
 #### Data preprocessing
 
+Reliability data were preprocessed using R 4.3.2. Reliability metrics were averaged for each bus and rapid transit route across the lifespan of the data. Spatial Data was processd in QGIS. All layers were reporojected to NAD 83 Massachusetts stateplane, and clipped to the study area region.
