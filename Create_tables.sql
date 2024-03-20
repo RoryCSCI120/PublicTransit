@@ -46,3 +46,10 @@ metric_value NUMERIC -- To be created by deviding numerator by denominaton. Valu
 -- For 'passenger wait time' the value is the percent of customers who wait less than the scheduled time between trains
 );
 
+--Demographics Data: Median Household Income by Census Tract for Boston Metropolitan Area
+CREATE TABLE demographics (
+DEMOGRAPHICSID SERIAL PRIMARY KEY --Create a primary key
+NAME VARCHAR(255)
+B19049_001 NUMERIC -- Median Household Income Value
+GEOM GEOMETRY(point, 26986) -- NAD 83 Massachusetts Stateplane
+);
