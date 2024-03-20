@@ -13,11 +13,18 @@ Transportation data, including bus and subway stops, as well as which route was 
 Demographics data, US Census tracts containing data regarding median household income. Data collected by the American Community Survey was downloaded from ESRI's Covid-19 Resources page. The original dataset was for the entire United States but was clipped down to the Boston Metropolitan Area, as defined by the Metropolitan Area Planning Council. The clip layer was created from a Massachusetts town boundary shapefile downloaded from MassGIS.
 
 Sources:
-https://coronavirus-resources.esri.com/datasets/esri::county-28/explore?location=33.307776%2C-119.918825%2C4.00
-https://www.mass.gov/info-details/massgis-data-2020-us-census-towns
+[Demographics](https://coronavirus-resources.esri.com/datasets/esri::county-28/explore?location=33.307776%2C-119.918825%2C4.00)
+[MA Cities](https://www.mass.gov/info-details/massgis-data-2020-us-census-towns)
+[MBTA Rapid Transit](https://www.mass.gov/info-details/massgis-data-mbta-rapid-transit)
+[MBTA Bus](https://www.mass.gov/info-details/massgis-data-mbta-bus-routes-and-stops)
+[Reliability Data](https://mbta-massdot.opendata.arcgis.com/datasets/b3a24561c2104422a78b593e92b566d5_0/explore)
+
 
 #### Data preprocessing
 
-Reliability data were preprocessed using R 4.3.2. Reliability metrics were averaged for each bus and rapid transit route across the lifespan of the data. Spatial Data was processed in QGIS. All layers were reprojected to NAD 83 Massachusetts stateplane, and clipped to the study area region.
+Spatial Data was processed in QGIS. All layers were reprojected to NAD 83 Massachusetts stateplane, and clipped to the study area region.
+
+Reliability data were preprocessed using R 4.3.2. Reliability metrics were averaged for each bus and rapid transit route across the lifespan of the data.
 
 
+#### Table normalization
