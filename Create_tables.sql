@@ -51,5 +51,5 @@ CREATE TABLE demographics (
 DEMOGRAPHICSID SERIAL PRIMARY KEY --Create a primary key
 NAME VARCHAR(255)
 B19049_001 NUMERIC -- Median Household Income Value
-GEOM GEOMETRY(point, 26986) -- NAD 83 Massachusetts Stateplane
+GEOM GEOMETRY(polygon, 26986) -- NAD 83 Massachusetts Stateplane
 );
