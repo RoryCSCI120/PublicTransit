@@ -50,6 +50,8 @@ metric_value NUMERIC -- To be created by deviding numerator by denominaton. Valu
 CREATE TABLE demographics (
 DEMOGRAPHICSID SERIAL PRIMARY KEY --Create a primary key
 NAME VARCHAR(255) -- Census Tract
+STATE VARCHAR(255)
+COUNTY VARCHAR(255)
 MEDIAN_INCOME NUMERIC -- Median Household Income Value
 GEOM GEOMETRY(polygon, 26986) -- NAD 83 Massachusetts Stateplane
 );
