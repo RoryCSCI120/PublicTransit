@@ -8,7 +8,11 @@ This project aims to address issues such as; accessibility and equity, urban mob
 
 ### Data
 
-Transportation data, including bus and subway stops, as well as which route was associated with the stops, were downloaded from MassGIS. Reliability data for 2015 - March 2024 were downloaded from the MBTA open data portal (included in the datashare folder)
+Transportation data, including bus and subway stops, as well as which route was associated with the stops, were downloaded from MassGIS (See figure 1). Reliability data for 2015 - March 2024 were downloaded from the MBTA open data portal. 
+
+Figure 1
+
+![Map of MBTA rail and bus stops](figures/data_layers.png)
 
 Demographics data, US Census tracts containing data regarding median household income. Data collected by the American Community Survey was downloaded from ESRI's Covid-19 Resources page. The original dataset was for the entire United States but was clipped down to the Boston Metropolitan Area, as defined by the Metropolitan Area Planning Council. The clip layer was created from a Massachusetts town boundary shapefile downloaded from MassGIS.
 
