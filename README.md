@@ -18,6 +18,7 @@ Demographics data, US Census tracts containing data regarding median household i
 
 Figure 2
 
+![GreaterBostonMedianHouseholdIncomeCensusTracts](https://github.com/adlai-nelson/PublicTransit/assets/131007848/b8171922-c98d-48c6-b16d-4d7098e69b98)
 
 
 Sources:
