@@ -22,6 +22,7 @@ Figure 2
 
 
 Sources:
+
 [Demographics](https://coronavirus-resources.esri.com/datasets/esri::county-28/explore?location=33.307776%2C-119.918825%2C4.00)
 
 [MA Cities](https://www.mass.gov/info-details/massgis-data-2020-us-census-towns)
@@ -42,8 +43,9 @@ Data for the silver line was listed as 'bus' in the reliability metrics, but 'ra
 
 
 #### Table normalization
-The empty tables in `create_tables.csv` will be 1NF and 2NF compliant, as they have atomic values, do not rely on the order of data, each column has a name, and columns have the same data type. 
-The tables will also be 2NF compliant, as none of them have a composite key, having only one primary key each.
-To achieve 1NF compliance, some values will have to be split out, as the current state of the subway stops data lists multiple lines in the same entry.
-This will have to be seperated, emulating the style of the bus stops events table, wich is already normalized in this way. 
+The Bus data did not require any normalization. From Massgis/MassDOT, there was one table containing bus stop IDs and the point location, and one table containing the IDs and each bus stop, where each unique combination of ID and bus stop was on itʻs own row. This was compliant with 1NF, as all of the values were atomic. In addition, they were all of the same type, and order did not matter. 
+
+The rail and silver line stops data did have to be normalized. The rail and silver line data were part of the same table, where they had to be seperated out. This shapefile listed station ID, station location, and the lines that serviced the station. There were multiple instances were multiple lines serviced the same station, so the data was normalized by creating a seperate table (rail_events and silver_events) to store station IDs and routes. They were normalized, so each place where a route name was repeated it was instead on itʻs own row. Because both route name and station ID repeated, a new event ID table had to be created.
+
+
 
