@@ -1,73 +1,73 @@
-STATION,ROUTE
-Airport Terminal B2,SL1
-Design Center,SL2
-Lenox St,SL4
-Lenox St,SL5
-Massachusetts Ave,SL4
-Massachusetts Ave,SL5
-West Newton Street,SL4
-West Newton Street,SL5
-Union Park Street,SL4
-Union Park Street,SL5
-East Berkeley Street,SL4
-East Berkeley Street,SL5
-Herald Street,SL4
-Herald Street,SL5
-Worcester Street,SL4
-Worcester Street,SL5
-Melnea Cass Blvd,SL4
-Melnea Cass Blvd,SL5
-Tuffs Medical Center,SL4
-Tuffs Medical Center,SL5
-Tide St,SL2
-Harbor St,SL2
-Airport Terminal B1,SL1
-Airport Terminal A,SL1
-Airport Terminal C,SL1
-Airport Terminal E,SL1
-Silver Line Way,SL1
-Silver Line Way,SL2
-Silver Line Way,SL3
-World Trade Center,SL1
-World Trade Center,SL2
-World Trade Center,SL3
-Courthouse,SL1
-Courthouse,SL2
-Courthouse,SL3
-South Station,SL1
-South Station,SL2
-South Station,SL3
-88 Black Falcon Ave,SL2
-23 Dry Dock Ave,SL2
-27 Dry Dock Ave,SL2
-Tremont St @ Boylston Station,SL5
-Temple Pl @ Washington St,SL5
-Chinatown Gate,SL4
-Nubian,SL4
-Nubian,SL5
-Essex St @ Atlantic Ave,SL4
-Northern Ave,SL2
-Melnea Cass Blvd,SL4
-Melnea Cass Blvd,SL5
-Lenox St,SL4
-Lenox St,SL5
-Massachusetts Ave,SL4
-Massachusetts Ave,SL5
-Worcester Street,SL4
-Worcester Street,SL5
-West Newton Street,SL4
-West Newton Street,SL5
-Union Park Street,SL4
-Union Park Street,SL5
-East Berkeley Street,SL4
-East Berkeley Street,SL5
-Herald Street,SL4
-Herald Street,SL5
-Tuffs Medical Center,SL4
-Tuffs Medical Center,SL5
-Black Falcon Ave,SL2
-Eastern Avenue,SL3
-Box District,SL3
-Bellingham Square,SL3
-Chelsea,SL3
-Airport,SL3
+event_id,STATION,ROUTE
+2,Airport Terminal B2,SL1
+3,Design Center,SL2
+4,Lenox St,SL4
+5,Lenox St,SL5
+6,Massachusetts Ave,SL4
+7,Massachusetts Ave,SL5
+8,West Newton Street,SL4
+9,West Newton Street,SL5
+10,Union Park Street,SL4
+11,Union Park Street,SL5
+12,East Berkeley Street,SL4
+13,East Berkeley Street,SL5
+14,Herald Street,SL4
+15,Herald Street,SL5
+16,Worcester Street,SL4
+17,Worcester Street,SL5
+18,Melnea Cass Blvd,SL4
+19,Melnea Cass Blvd,SL5
+20,Tuffs Medical Center,SL4
+21,Tuffs Medical Center,SL5
+22,Tide St,SL2
+23,Harbor St,SL2
+24,Airport Terminal B1,SL1
+25,Airport Terminal A,SL1
+26,Airport Terminal C,SL1
+27,Airport Terminal E,SL1
+28,Silver Line Way,SL1
+29,Silver Line Way,SL2
+30,Silver Line Way,SL3
+31,World Trade Center,SL1
+32,World Trade Center,SL2
+33,World Trade Center,SL3
+34,Courthouse,SL1
+35,Courthouse,SL2
+36,Courthouse,SL3
+37,South Station,SL1
+38,South Station,SL2
+39,South Station,SL3
+40,88 Black Falcon Ave,SL2
+41,23 Dry Dock Ave,SL2
+42,27 Dry Dock Ave,SL2
+43,Tremont St @ Boylston Station,SL5
+44,Temple Pl @ Washington St,SL5
+45,Chinatown Gate,SL4
+46,Nubian,SL4
+47,Nubian,SL5
+48,Essex St @ Atlantic Ave,SL4
+49,Northern Ave,SL2
+50,Melnea Cass Blvd,SL4
+51,Melnea Cass Blvd,SL5
+52,Lenox St,SL4
+53,Lenox St,SL5
+54,Massachusetts Ave,SL4
+55,Massachusetts Ave,SL5
+56,Worcester Street,SL4
+57,Worcester Street,SL5
+58,West Newton Street,SL4
+59,West Newton Street,SL5
+60,Union Park Street,SL4
+61,Union Park Street,SL5
+62,East Berkeley Street,SL4
+63,East Berkeley Street,SL5
+64,Herald Street,SL4
+65,Herald Street,SL5
+66,Tuffs Medical Center,SL4
+67,Tuffs Medical Center,SL5
+68,Black Falcon Ave,SL2
+69,Eastern Avenue,SL3
+70,Box District,SL3
+71,Bellingham Square,SL3
+72,Chelsea,SL3
+73,Airport,SL3
