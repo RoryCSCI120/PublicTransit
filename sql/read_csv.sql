@@ -1,84 +1,82 @@
-------Create Tables----------
+/*
+Run the code in this table to read in CSV files
 
-CREATE TABLE mbta_subway_stops (
-STOPID SERIAL PRIMARY KEY -- Need to create a primary key
-STATION VARCHAR(255) -- Name of station
-GEOM GEOMETRY(point, 26986) -- NAD 83 Massachusetts Stateplane
-);
--- events tables are needed, as some stops have more than one line that service them 
-CREATE TABLE mbta_subway_events (
-EVENT_ID SERIAL PRIMARY KEY --
-STOPID INT	-- Foreign key
-LINE VARCHAR(255) -- Line name is route ID, acts as foreign key to reliability table
-FOREIGN KEY (STOPID) REFERENCES mbta_subway_stops(STOPID)
-FOREIGN KEY (LINE) REFERENCES rail_reliability(gtfs_route_id)
-);
+These commands must be run from the psql in command line.
+I tried using the COPY command (wich works in PGAdmin) but I was getting errors
 
--- Bus data
-CREATE TABLE mbta_bus_stops (
-STOP_ID INT PRIMARY KEY
-STOP_NAME VARCHAR(255)
-GEOM GEOMETRY(point, 26986)
-);
--- events tables are needed, as some stops have more than one line that service them 
-CREATE TABLE mbta_busstop_events (
-EVENT_ID SERIAL PRIMARY KEY --
-STOP_ID INT	-- Foreign key
-MBTA_ROUTE VARCHAR(255) -- MBTA route ID, acts as foreign key to reliability table
-FOREIGN KEY (STOP_ID) REFERENCES mbta_bus_stops(STOP_ID)
-FOREIGN KEY (MBTA_ROUTE) REFERENCES bus_reliability(gtfs_route_id)
-);
+NOTE: you must read in the spatial data first, using the following command for example:
 
--- also need to create seperate table for silver line as it is under 'bus' in reliability data but under'rapid transit' in other data
--- Silver line routes and IDs do not match up in the database, so we will have to average reliability metrics for silver line
-CREATE TABLE mbta_silver_stops (
-STOP_ID INT PRIMARY KEY
-STOP_NAME VARCHAR(255)
-GEOM GEOMETRY(point, 26986)
-);
--- events tables are needed, as some stops have more than one line that service them 
-CREATE TABLE mbta_silver_events (
-EVENT_ID SERIAL PRIMARY KEY
-STOP_ID INT	-- Foreign key
-ROUTE VARCHAR(255) -- route: 'SL1, SL2, etc.'
-FOREIGN KEY (STOP_ID) REFERENCES mbta_silver_stops(STOP_ID)
-FOREIGN KEY (ROUTE) REFERENCES silver_reliability(route_name)
-);
+psql -U postgres -d database -f sql\bus_points.sql
 
---Reliability Metrics
 
--- Metric for bus is Headway / Schedule adherance
+NOTE: ALL FILE PATHS ARE RELATIVE TO THE LOCATION OF THE PUBLICTRANSIT FOLDER
+IF YOU ARE NOT IN THAT FOLDER, YOU MAY NEED TO MODIFY THE FILE PATHS.
+*/
+-------------Create tables----------------------
+
+-- reliability tables
+
 CREATE TABLE bus_reliability (
-gtfs_route_id VARCHAR(255) PRIMARY KEY -- route ids for bus are characters (ex. '47', '57A')
-otp_numerator NUMERIC -- The numerator and denominator the reliability metric 
-otp_denominator NUMERIC
-metric_value NUMERIC -- To be created by deviding numerator by denominaton. Value bounded between 0 and 1
+gtfs_route_id VARCHAR(255) PRIMARY KEY,
+otp_value NUMERIC
 );
 
--- Metric for rail is Passenger Wait Time
 CREATE TABLE rail_reliability (
-gtfs_route_id VARCHAR(255) PRIMARY KEY -- route ids for rail are characters (ex. 'Orange')
-gtfs_route_name VARCHAR(255)
-otp_numerator NUMERIC -- The numerator and denominator the reliability metric 
-otp_denominator NUMERIC
-metric_value NUMERIC -- To be created by deviding numerator by denominaton. Value bounded between 0 and 1
--- For 'passenger wait time' the value is the percent of customers who wait less than the scheduled time between trains
+gtfs_route_id VARCHAR(255) PRIMARY KEY,
+otp_value NUMERIC
 );
+
 CREATE TABLE silver_reliability (
-route_name VARCHAR(255) PRIMARY KEY -- route nam for silver line are characters (ex. 'SL1' 'SL2')
-otp_numerator NUMERIC -- The numerator and denominator the reliability metric 
-otp_denominator NUMERIC
-metric_value NUMERIC -- To be created by deviding numerator by denominaton. Value bounded between 0 and 1
+gtfs_route_long_name VARCHAR(255) PRIMARY KEY,
+otp_value NUMERIC
+);
+
+
+-- events tables
+CREATE TABLE bus_events (
+ID INT PRIMARY KEY,
+MBTA_ROUTE VARCHAR(255),
+STOP_ID VARCHAR(255),
+FOREIGN KEY (MBTA_ROUTE) REFERENCES bus_reliability(gtfs_route_id),
+FOREIGN KEY (STOP_ID) REFERENCES bus_points(stop_id)
+);
+
+CREATE TABLE rail_events (
+ID INT PRIMARY KEY,
+STATION VARCHAR(255),
+LINE VARCHAR(255),
+FOREIGN KEY (LINE) REFERENCES rail_reliability(gtfs_route_id),
+FOREIGN KEY (STATION) REFERENCES rail_points(station)
+);
+
+CREATE TABLE silver_events (
+ID INT PRIMARY KEY,
+STATION VARCHAR(255),
+ROUTE VARCHAR(255),
+FOREIGN KEY (ROUTE) REFERENCES silver_reliability(gtfs_route_long_name),
+FOREIGN KEY (STATION) REFERENCES silver_points(station)
 );
 
 
 
---Demographics Data: Median Household Income by Census Tract for Boston Metropolitan Area
-CREATE TABLE demographics (
-DEMOGRAPHICSID SERIAL PRIMARY KEY --Create a primary key
-NAME VARCHAR(255) -- Census Tract
-STATE VARCHAR(255)
-COUNTY VARCHAR(255)
-MEDIAN_INCOME NUMERIC -- Median Household Income Value
-GEOM GEOMETRY(polygon, 26986) -- NAD 83 Massachusetts Stateplane
-);
+-------------import data----------------------
+
+\copy bus_reliability FROM 'datashare\reliability\bus_reliability.csv' DELIMITER ',' CSV
+\copy rail_reliability FROM 'datashare\reliability\rail_reliability.csv' DELIMITER ',' CSV
+\copy silver_reliability FROM 'datashare\reliability\silver_reliability.csv' DELIMITER ',' CSV
+
+
+\copy bus_events FROM 'datashare\bus\bus_events1.csv' DELIMITER ',' CSV
+\copy rail_events FROM 'datashare\rail\rail_events.csv' DELIMITER ',' CSV
+\copy rail_events FROM 'datashare\silver\silver_events.csv' DELIMITER ',' CSV
+
+
+
+/*
+shp2pgsql commands used to create .sql files of spatial datasets
+
+shp2pgsql -s 26986 -I datashare\rail\rail.shp public.rail_points > sql_tables\rail_points.sql
+shp2pgsql -s 26986 -I datashare\bus\MBTABUSSTOPS_PT.shp public.bus_points > sql_tables\bus_points.sql
+shp2pgsql -s 26986 -I datashare\silver\silver_stops.shp public.silver_points > sql_tables\silver_points.sql
+shp2pgsql -s 26986 -I datashare\Demographics\GreaterBostonMedianHouseholdIncome.shp public.demographics > sql_tables\demographics.sql
+*/
