@@ -26,11 +26,6 @@ gtfs_route_id VARCHAR(255) PRIMARY KEY,
 otp_value NUMERIC
 );
 
-CREATE TABLE silver_reliability (
-gtfs_route_long_name VARCHAR(255) PRIMARY KEY,
-otp_value NUMERIC
-);
-
 
 -- events tables
 CREATE TABLE bus_events (
@@ -49,26 +44,16 @@ FOREIGN KEY (LINE) REFERENCES rail_reliability(gtfs_route_id),
 FOREIGN KEY (STATION) REFERENCES rail_points(station)
 );
 
-CREATE TABLE silver_events (
-ID INT PRIMARY KEY,
-STATION VARCHAR(255),
-ROUTE VARCHAR(255),
-FOREIGN KEY (ROUTE) REFERENCES silver_reliability(gtfs_route_long_name),
-FOREIGN KEY (STATION) REFERENCES silver_points(station)
-);
-
 
 
 -------------import data----------------------
 
 \copy bus_reliability FROM 'datashare\reliability\bus_reliability.csv' DELIMITER ',' CSV
 \copy rail_reliability FROM 'datashare\reliability\rail_reliability.csv' DELIMITER ',' CSV
-\copy silver_reliability FROM 'datashare\reliability\silver_reliability.csv' DELIMITER ',' CSV
 
 
 \copy bus_events FROM 'datashare\bus\bus_events1.csv' DELIMITER ',' CSV
 \copy rail_events FROM 'datashare\rail\rail_events.csv' DELIMITER ',' CSV
-\copy rail_events FROM 'datashare\silver\silver_events.csv' DELIMITER ',' CSV
 
 
 
