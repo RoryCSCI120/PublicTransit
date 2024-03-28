@@ -6,7 +6,7 @@ CREATE TABLE "public"."rail_points" (gid serial,
 "line" varchar(80),
 "terminus" varchar(80),
 "route" varchar(80));
-ALTER TABLE "public"."rail_points" ADD PRIMARY KEY (gid);
+ALTER TABLE "public"."rail_points" ADD PRIMARY KEY (station);
 SELECT AddGeometryColumn('public','rail_points','geom','26986','POINT',2);
 INSERT INTO "public"."rail_points" ("station","line","terminus","route",geom) VALUES ('Park Street','GREEN/RED','N','GREEN B C D E / RED A - Ashmont  B - Braintree  C - Alewife','01010000206A69000000DE710A00D10C4140AF9485037D2B41');
 INSERT INTO "public"."rail_points" ("station","line","terminus","route",geom) VALUES ('JFK/UMass','RED','N','A - Ashmont  B - Braintree  C - Alewife','01010000206A690000007DAEB618EB0C4180E2C718185E2B41');

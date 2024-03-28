@@ -6,7 +6,7 @@ CREATE TABLE "public"."bus_points" (gid serial,
 "stop_name" varchar(254),
 "town" varchar(21),
 "town_id" int4);
-ALTER TABLE "public"."bus_points" ADD PRIMARY KEY (gid);
+ALTER TABLE "public"."bus_points" ADD PRIMARY KEY (stop_id);
 SELECT AddGeometryColumn('public','bus_points','geom','26986','POINT',2);
 INSERT INTO "public"."bus_points" ("stop_id","stop_name","town","town_id",geom) VALUES ('3077','Gallivan Blvd @ opp Marsh St','BOSTON','35','01010000206A690000003EE85905F20C41E00DBED0C63D2B41');
 INSERT INTO "public"."bus_points" ("stop_id","stop_name","town","town_id",geom) VALUES ('841','Lagrange St @ Virgil Rd','BOSTON','35','01010000206A69000000E02D9059D20B4180C2F508C83D2B41');
