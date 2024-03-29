@@ -10,15 +10,11 @@ This project aims to address issues such as; accessibility and equity, urban mob
 
 Transportation data, including bus and subway stops, as well as which route was associated with the stops, were downloaded from MassGIS (See figure 1). Reliability data for 2015 - March 2024 were downloaded from the MBTA open data portal. 
 
+Demographics data, US Census tracts containing data regarding median household income. Data collected by the American Community Survey was downloaded from ESRI's Covid-19 Resources page. The original dataset was for the entire United States but was clipped down to the Boston Metropolitan Area, as defined by the Metropolitan Area Planning Council. Another demographics dataset will also be used of US census tracts regarding population count. This data is from the US Census and was retrieved from ESRI's Livign Atlas. Both clip layers were created from a Massachusetts town boundary shapefile downloaded from MassGIS. 
+
 Figure 1
 
-![Map of MBTA rail and bus stops](figures/data_layers.png)
-
-Demographics data, US Census tracts containing data regarding median household income. Data collected by the American Community Survey was downloaded from ESRI's Covid-19 Resources page. The original dataset was for the entire United States but was clipped down to the Boston Metropolitan Area, as defined by the Metropolitan Area Planning Council. The clip layer was created from a Massachusetts town boundary shapefile downloaded from MassGIS.
-
-Figure 2
-
-![GreaterBostonMedianHouseholdIncomeCensusTracts](https://github.com/adlai-nelson/PublicTransit/assets/131007848/b8171922-c98d-48c6-b16d-4d7098e69b98)
+![Screenshot 2024-03-28 213050](https://github.com/adlai-nelson/PublicTransit/assets/131007848/b352eb60-8fdd-46e6-98d9-3d471aadb7e6)
 
 
 Sources:
