@@ -14,12 +14,8 @@ LEFT JOIN bus_reliability
 ON bus_events.MBTA_ROUTE = bus_reliability.gtfs_route_id
 GROUP BY bus_events.STOP_ID;
 
---- Stops per income level
 
-SELECT  demographics.b19049_001, count(*) AS n_stops
-FROM grid, kioskdhd3
-WHERE st_contains(grid.geom,kioskdhd3.geom)
-GROUP BY grid.gid;
+------------------N stops per data level-----------------
 
 -- RAIL STOPS
 -- n rail stops per income level
