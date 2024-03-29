@@ -52,7 +52,7 @@ They were normalized, so each place where a route name was repeated it was inste
 Non normalized rail data:
 <img src="figures/non-normalized_rail.png" alt="non normalized table" width="200"/>
 Normalized rail data:
-<img src="figures/normalized_rail.png" alt="normalized rail table" width="200"/>
+<img src="figures/normalized_rail.png" alt="normalized rail table" width="300"/>
 #### Instructions for use
 
 To load in the data to postgres, the following sql scripts must be run in postgres:
