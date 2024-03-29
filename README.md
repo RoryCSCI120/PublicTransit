@@ -49,6 +49,8 @@ This shapefile listed station ID, station location, and the lines that serviced 
 There were multiple instances were multiple lines serviced the same station, so the data was normalized by creating a seperate table (rail_events) to store station IDs and routes. 
 They were normalized, so each place where a route name was repeated it was instead on itʻs own row. Because both route name and station ID repeated, a new event ID table had to be created.
 
+<img src="figures/normalized.png" alt="drawing" width="200"/>
+
 #### Instructions for use
 
 To load in the data to postgres, the following sql scripts must be run in postgres:
