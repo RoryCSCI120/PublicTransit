@@ -52,7 +52,7 @@ FOREIGN KEY (STATION) REFERENCES rail_points(station)
 \copy rail_reliability FROM 'datashare\reliability\rail_reliability.csv' DELIMITER ',' CSV
 
 
-\copy bus_events FROM 'datashare\bus\bus_events1.csv' DELIMITER ',' CSV
+\copy bus_events FROM 'datashare\bus\bus_events.csv' DELIMITER ',' CSV
 \copy rail_events FROM 'datashare\rail\rail_events.csv' DELIMITER ',' CSV
 
 
