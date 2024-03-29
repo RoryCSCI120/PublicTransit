@@ -14,8 +14,7 @@ Demographics data, US Census tracts containing data regarding median household i
 
 Figure 1
 
-![Screenshot 2024-03-28 213050](https://github.com/adlai-nelson/PublicTransit/assets/131007848/b352eb60-8fdd-46e6-98d9-3d471aadb7e6)
-
+![data_layers1](https://github.com/adlai-nelson/PublicTransit/assets/131007848/a7cfb7d0-3d71-4c4b-abb6-3ccec2a568ab)
 
 Sources:
 
