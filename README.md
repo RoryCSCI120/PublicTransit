@@ -52,6 +52,7 @@ Non normalized rail data:
 Normalized rail data:
 
 <img src="figures/normalized_rail.png" alt="normalized rail table" width="300"/>
+
 #### Instructions for use
 
 To load in the data to postgres, the following sql scripts must be run in postgres:
