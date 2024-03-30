@@ -40,7 +40,7 @@ Reliability data were preprocessed using R 4.3.2. Reliability metrics were avera
 #### Table normalization
 The Bus data did not require any normalization. From Massgis/MassDOT, there was one table containing bus stop IDs and the point location, and one table containing the IDs and each bus stop, where each unique combination of ID and bus stop was on itʻs own row. This was compliant with 1NF, as all of the values were atomic. In addition, they were all of the same type, and order did not matter. 
 
-The rail stops data did have to be normalized.
+The rail stops data had to be normalized.
 This shapefile listed station ID, station location, and the lines that serviced the station. 
 There sometimes multiple lines serviced the same station, so the data was normalized by creating a seperate table (rail_events) to store station names and routes. 
 They were normalized, so each place where a route name was repeated it was instead on itʻs own row. Because both route name and station ID repeated in the , a new event ID table had to be created.
