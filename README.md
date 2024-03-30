@@ -46,9 +46,11 @@ There sometimes multiple lines serviced the same station, so the data was normal
 They were normalized, so each place where a route name was repeated it was instead on itʻs own row. Because both route name and station ID repeated in the , a new event ID table had to be created.
 
 Non normalized rail data:
+
 <img src="figures/non-normalized_rail.png" alt="non normalized table" width="200"/>
 
 Normalized rail data:
+
 <img src="figures/normalized_rail.png" alt="normalized rail table" width="300"/>
 #### Instructions for use
 
