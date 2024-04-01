@@ -15,20 +15,21 @@ Demographics data, US Census tracts containing data regarding median household i
 Figure 1
 
 ![data_layers1](https://github.com/adlai-nelson/PublicTransit/assets/131007848/a7cfb7d0-3d71-4c4b-abb6-3ccec2a568ab)
+(Made in QGIS)
 
 Sources:
 
-[Demographics](https://coronavirus-resources.esri.com/datasets/esri::county-28/explore?location=33.307776%2C-119.918825%2C4.00)
+[Demographics](https://coronavirus-resources.esri.com/datasets/esri::county-28/explore?location=33.307776%2C-119.918825%2C4.00) - Median Household Income Census Tract Data
 
-[MA Cities](https://www.mass.gov/info-details/massgis-data-2020-us-census-towns)
+[MA Cities](https://www.mass.gov/info-details/massgis-data-2020-us-census-towns) - Massachusetts Towns
 
-[MBTA Rapid Transit](https://www.mass.gov/info-details/massgis-data-mbta-rapid-transit)
+[MBTA Rapid Transit](https://www.mass.gov/info-details/massgis-data-mbta-rapid-transit) - Rapid Transit Stop Data
 
-[MBTA Bus](https://www.mass.gov/info-details/massgis-data-mbta-bus-routes-and-stops)
+[MBTA Bus](https://www.mass.gov/info-details/massgis-data-mbta-bus-routes-and-stops) - Bus stop Data
 
-[Reliability Data](https://mbta-massdot.opendata.arcgis.com/datasets/b3a24561c2104422a78b593e92b566d5_0/explore)
+[Reliability Data](https://mbta-massdot.opendata.arcgis.com/datasets/b3a24561c2104422a78b593e92b566d5_0/explore) - Transit Reliability
 
-ESRI Living Atlas
+ESRI Living Atlas - Population Census Tract Data
 
 #### Data preprocessing
 
