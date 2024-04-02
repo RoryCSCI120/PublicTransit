@@ -68,8 +68,41 @@ Note: read_csv.sql must be run in command line psql, as PGAdmin does not support
 
 Next, analysis.sql was run. The outputs of each query were exported as .csv and imported into QGIS and R to visualize.
 The package ggplot2 for R software was used for graphical visualizations. 
-The data was plotted and trendlines were drawn using the geom_smooth command and 'lm' model.
+The data was plotted and trendlines were drawn using the geom_smooth command and 'lm' model. Below is an in depth explanation of some of the queries available in analysis.sql.
 
+To calculate number of stops, a simple spatal query was run, using the st_contains command in postgis. The results of this query were exported and visualized in R.
+
+```
+SELECT demographics.b19049_001 AS median_hh_inc, -- median household income
+count(rail_points.geom) AS n_stations -- count n stations within each census tract
+FROM demographics
+LEFT JOIN rail_points ON st_contains(demographics.geom,rail_points.geom) -- spatial join
+GROUP BY demographics.gid -- group by census tracts
+ORDER BY n_stations DESC;
+```
+
+To calculate average reliability per tract, a more complex query was run. 
+First, rail events and rail reliability tables were joined, and grouped by station name, calculating the mean reliability value for each rail station. 
+Next, the resultant table was joined with rail points, to add the geometry column to the reliability value.
+Finally, the resulting table containing station points and reliability values was joined with the census tracts using st_contains.
+The output of this query was exported and visualized in R, and imported into QGIS to be visualized as well.
+
+```
+SELECT demographics.b19049_001 AS median_hh_inc, -- Median HH income
+AVG(table2.reliability) AS reliability, -- reliability data, averaged for each polygon
+st_AsText(demographics.geom) as geometry -- geometry in WKT format
+FROM demographics
+LEFT JOIN (SELECT rail_points.station, table1.mean_reliability as reliability, rail_points.geom as geom -- Select desired columns
+		   FROM (SELECT rail_events.station, AVG(rail_reliability.otp_value) as mean_reliability -- average reliabilty per station
+				 FROM rail_events -- We first must join rail events with rail reliability
+				 LEFT JOIN rail_reliability 
+				 ON rail_events.line = rail_reliability.gtfs_route_id -- line = route id 
+				 GROUP BY rail_events.station) as table1
+		   LEFT JOIN rail_points -- join to rail points to get spatial attribute
+		   ON  table1.station = rail_points.station) as table2
+ON st_contains(demographics.geom, table2.geom) -- where the census tract contains the station points
+GROUP BY demographics.gid; -- group by census tracts
+```
 
 ### Results
 
