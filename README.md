@@ -106,7 +106,15 @@ GROUP BY demographics.gid; -- group by census tracts
 
 ### Results
 
+Most of the census tracts in our study area do not contain any bus or train stops. 
+This is due to the priotiries of the MBTA, as their subway and bus lines do not seek to service the enitre Boston metro area, only the urban center and immidiately surrounding areas.
+In this analysis, we chose to exclude the commuter rail as well, as we wanted to focus on only the Boston area, but adding in the commuter rail would increase coverage.
+
+
 ![Two bar graphs showing distribution of n stops/stations per census block](figures/distribution_stops.png)
+
+Number of rail stations seems to have little relationship with census tract population (a, b). 
+N bus stops and population seems to be positively correlated, census tracts with higher population have more bus stops, although that isn't a strong relationship (d).
 
 ![Four scatter plot graphs showing relationship between income, population, and n stops/stations](figures/n_per_tract.png)
 
