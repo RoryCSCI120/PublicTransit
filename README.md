@@ -63,7 +63,7 @@ Normalized rail data:
 To load in the data to a database, the following sql scripts must be run in postgres:
 bus_points.sql, rail_points.sql, demographics.sql, and read_csv.sql.
 These files are contained within the sql folder.
-Note: read_csv.sql must be run in command line psql, as PGAdmin does not support the \copy command
+Note: read_csv.sql must be run in command line psql, as PGAdmin does not support the `\copy` command
 
 
 Next, analysis.sql was run. The outputs of each query were exported as .csv and imported into QGIS and R to visualize.
