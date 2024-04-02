@@ -19,15 +19,19 @@ Figure 1
 
 Sources:
 
-[Demographics](https://coronavirus-resources.esri.com/datasets/esri::county-28/explore?location=33.307776%2C-119.918825%2C4.00) - Median Household Income Census Tract Data
+[Demographics](https://coronavirus-resources.esri.com/datasets/esri::county-28/explore?location=33.307776%2C-119.918825%2C4.00) - Median Household Income Census Tract Data polygons
 
 [MA Cities](https://www.mass.gov/info-details/massgis-data-2020-us-census-towns) - Massachusetts Towns
 
-[MBTA Rapid Transit](https://www.mass.gov/info-details/massgis-data-mbta-rapid-transit) - Rapid Transit Stop Data
+[MBTA Rapid Transit](https://www.mass.gov/info-details/massgis-data-mbta-rapid-transit) - Rapid Transit Stop Data, shapefile points containing stations and the lines that service those stations
 
-[MBTA Bus](https://www.mass.gov/info-details/massgis-data-mbta-bus-routes-and-stops) - Bus stop Data
+[MBTA Bus](https://www.mass.gov/info-details/massgis-data-mbta-bus-routes-and-stops) - Bus stop Data, containing shapefile points and additional bus events table
 
-[Reliability Data](https://mbta-massdot.opendata.arcgis.com/datasets/b3a24561c2104422a78b593e92b566d5_0/explore) - Transit Reliability
+[Reliability Data](https://mbta-massdot.opendata.arcgis.com/datasets/b3a24561c2104422a78b593e92b566d5_0/explore) - Transit Reliability tables contianed one entry for every day and every line from 2015-2024. 
+For both subway and bus lines, reliability ranges between 0 and 1, where 1 is most reliable.
+For bus lines, reliability was the perportion of busses that depart no more than 3 minues late for frequent routes, and 6 minutes late for infrequent routes.
+For subway lines, reliability was "the percentage of riders who waited less than or equal to the amount of time scheduled between trains."
+See [MBTA website](https://www.mbta.com/performance-metrics/service-reliability) for more detail.
 
 ESRI Living Atlas - Population Census Tract Data
 
