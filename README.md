@@ -69,11 +69,15 @@ The data was plotted and trendlines were drawn using the geom_smooth command and
 
 ### Results
 
+![Two bar graphs showing distribution of n stops/stations per census block](figures/distribution_stops.png)
+
+![Four scatter plot graphs showing relationship between income, population, and n stops/stations](figures/n_per_tract.png)
+
+![Four scatter plot graphs showing relationship between income, population, and reliability](figures/rely_per_tract.png)
+
+
+
 ![Map showing spatial dimention of reliability for rail and bus lines](figures/reliability.png)
-
-
-
-
 
 
 
