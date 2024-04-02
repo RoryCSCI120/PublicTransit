@@ -54,12 +54,22 @@ Normalized rail data:
 
 <img src="figures/normalized_rail.png" alt="normalized rail table" width="300"/>
 
-#### Instructions for use
+### Methods
 
-To load in the data to postgres, the following sql scripts must be run in postgres:
+To load in the data to a database, the following sql scripts must be run in postgres:
 bus_points.sql, rail_points.sql, demographics.sql, and read_csv.sql.
 These files are contained within the sql folder.
 Note: read_csv.sql must be run in command line psql, as PGAdmin does not support the \copy command
+
+
+Next, analysis.sql was run. The outputs of each query were exported as .csv and imported into QGIS and R to visualize.
+The package ggplot2 for R software was used for graphical visualizations.
+
+
+### Results
+
+![Map showing spatial dimention of reliability for rail and bus lines](figures/reliability.png)
+
 
 
 
