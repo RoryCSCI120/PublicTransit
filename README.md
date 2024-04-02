@@ -63,7 +63,8 @@ Note: read_csv.sql must be run in command line psql, as PGAdmin does not support
 
 
 Next, analysis.sql was run. The outputs of each query were exported as .csv and imported into QGIS and R to visualize.
-The package ggplot2 for R software was used for graphical visualizations.
+The package ggplot2 for R software was used for graphical visualizations. 
+The data was plotted and trendlines were drawn using the geom_smooth command and 'lm' model.
 
 
 ### Results
