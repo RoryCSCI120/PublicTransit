@@ -3,7 +3,7 @@
 Adlai Nelson, Isack Walube, Rory Dickinson
 
 ### Introduction
-In an era characterized by rapid urban development, the effectiveness of public transportation networks is vital for the welfare of urban dwellers. This project evaluates the efficiency of public transit systems in Boston, focusing on metrics such as coverage, frequency, and connectivity across various block groups. By conducting a comprehensive analysis, we aim to derive actionable insights that can refine transit systems, ultimately enhancing accessibility and sustainability in public transportation.
+In an era characterized by rapid urban development, the effectiveness of public transportation networks is vital for the welfare of urban dwellers. This project evaluates the efficiency of public transit systems in Boston, focusing on metrics such as coverage, and reliability. By conducting a comprehensive analysis, we aim to derive actionable insights that can refine transit systems, ultimately enhancing accessibility and sustainability in public transportation.
 This project aims to address issues such as; accessibility and equity, urban mobility optimization, resource allocation, environmental sustainability, and data-driven decision-making by gaining insights into historical trends to identify areas for improvement. 
 
 ### Data
@@ -31,7 +31,7 @@ Sources:
 For both subway and bus lines, reliability ranges between 0 and 1, where 1 is most reliable.
 For bus lines, reliability was the perportion of busses that depart no more than 3 minues late for frequent routes, and 6 minutes late for infrequent routes.
 For subway lines, reliability was "the percentage of riders who waited less than or equal to the amount of time scheduled between trains."
-See [MBTA website](https://www.mbta.com/performance-metrics/service-reliability) for more detail.
+See [MBTA website](https://www.mbta.com/performance-metrics/service-reliability) for more detail. I was unable to access the origonal data they used to create these datasets, so the bus and rail metrics are not directly comperable.
 
 ESRI Living Atlas - Population Census Tract Data
 
