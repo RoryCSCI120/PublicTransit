@@ -113,17 +113,32 @@ In this analysis, we chose to exclude the commuter rail as well, as we wanted to
 
 ![Two bar graphs showing distribution of n stops/stations per census block](figures/distribution_stops.png)
 
-Number of rail stations seems to have little relationship with census tract population (a, b). 
+Number of rail stations seems to have little relationship with census tract population (a, c). N bus stops has a weak positive relationship with income (b). 
 N bus stops and population seems to be positively correlated, census tracts with higher population have more bus stops, although that isn't a strong relationship (d).
+This indicates that there are more bus stops in census tracts with higher population.
+This is good, as the goal of any public transportation system is to service the greatest amount of people.
+There are some inconsistencies and outliers in this data, however, as some of the bus stops and subway stations were in census tracts with very low population, as they were zoned for industial or park use.
+Census tracts are not a perfect measure of how many people can easily access the stop, as the stop may be easily accesable by those in nearby census tracts.
 
 ![Four scatter plot graphs showing relationship between income, population, and n stops/stations](figures/n_per_tract.png)
 
+Income made little difference on rail or bus reliability (A, B). 
+Population showed a weak negative relationship with rail and bus reliability, although the slope was very shallow (C, D).
+One possible explanation for lower reliability in higher populated census tracts is that there are more stations and stops, and it could be also in more congested urban areas, increasing the amount of delays.
+
 ![Four scatter plot graphs showing relationship between income, population, and reliability](figures/rely_per_tract.png)
 
-
+Due to the small amount of subway lines, the map of subway reliability by census tract is not particularly illuminating. 
+From it we can see that the blue line has the highest reliability, followed by the orange and red lines, and the green line has the lowest reliability.
+The bus map is more interesting, reliability appears to be spatially varied, with some pockets of higher reliability, the largest of wich is in the Watertown area.
 
 ![Map showing spatial dimention of reliability for rail and bus lines](figures/reliability.png)
 
+### Conclusion
 
+One of the major flaws of this research project was using census tracts to get population and income data. 
+In some cases, these numbers were not representative of the people who are near to those stops.
+Future reasearch could seek alternative data sources, such as gridded population data, or census block groups (perhaps using network analysis to select those within a short walk).
+Overall, this reserach project shows that reliability does not vary greatly in tracts of differing incomes or populations.
 
 
